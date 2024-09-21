@@ -16,8 +16,11 @@ void print_queue(void)
         printf("Empty queue!\n");
     }
     else {
-        for (int i = queue.counter - 1; i >= 0; --i) {
-            printf("%d: [%s]\n", i, queue.string[i]);
+        for (int i = 0, tail = queue.tail; i < queue.counter; ++i) {
+            printf("%d: [%s]\n", i, queue.string[tail++]);
+            if (tail == QUEUE_SIZE) {
+                tail = 0;
+            }
         }
     }
     printf("---------\n\n");
@@ -44,7 +47,7 @@ int main(void)
         case'-': {
             char* str = pop();
             printf("Popping string: '%s'\n", str);
-            // free(str);
+            free(str);
             break;
         }
         case'*': {

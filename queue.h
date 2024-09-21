@@ -11,5 +11,7 @@ typedef struct {
     uint32_t tail;
 }queue_t;
 
+extern queue_t queue;
+
 void push(const char* new_str);
 char* pop();
