@@ -38,34 +38,34 @@ int main(void)
         gets_s(input, INPUT_SIZE);
         ch = input[0];
         switch (ch) {
-        case'+': {
-            printf("Enter string to push to queue: ");
-            gets_s(input, INPUT_SIZE);
-            push(input);
-            break;
-        }
-        case'-': {
-            char* str = pop();
-            printf("Popping string: '%s'\n", str);
-            free(str);
-            break;
-        }
-        case'*': {
-            print_queue();
-            break;
-        }
-        case'/': {
-            printf("\nGOOD BYE!..\n\n");
-            break;
-        }
-        case'm': {
-            printf("%s", menu_string);
-            break;
-        }
-        default: {
-            printf("Undefined input!\n");
-            break;
-        }
+            case'+': {
+                printf("Enter string to push to queue: ");
+                gets_s(input, INPUT_SIZE);
+                push(input);
+                break;
+            }
+            case'-': {
+                char* str = pop();
+                printf("Popping string: '%s'\n", str);
+                free(str);
+                break;
+            }
+            case'*': {
+                print_queue();
+                break;
+            }
+            case'/': {
+                printf("\nGOOD BYE!..\n\n");
+                break;
+            }
+            case'm': {
+                printf("%s", menu_string);
+                break;
+            }
+            default: {
+                printf("Undefined input!\n");
+                break;
+            }
         }
     } while (ch != '/');
 
